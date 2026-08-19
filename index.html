@@ -114,6 +114,13 @@ h2.title{font-size:clamp(23px,3.4vw,33px);font-weight:800;letter-spacing:-.8px;m
 .pbox li::before{content:"›";color:var(--blue2);font-weight:800;flex-shrink:0}
 .orgnote{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15)}
 .orgnote h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:14px}
+.dprof{border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04)}
+.dprof dl{display:grid;grid-template-columns:104px 1fr}
+@media(max-width:520px){.dprof dl{grid-template-columns:84px 1fr}}
+.dprof dt{padding:13px 15px;font-size:12.5px;font-weight:800;color:#fff;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.1)}
+.dprof dd{padding:13px 15px;font-size:13.3px;color:#d3ddef;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.75}
+.dprof dd b{color:#9ec6ff;font-weight:700}
+.dprof dl>*:nth-last-child(-n+2){border-bottom:0}
 .org{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
 @media(max-width:820px){.org{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.org{grid-template-columns:1fr}}
@@ -311,13 +318,11 @@ footer .biz{margin-top:12px;color:#7e90ad;font-size:12px;line-height:1.9}
         <div class="nm">윤성수</div>
         <div class="ro">정책연구 · 공공행정 총괄</div>
         <ul>
-          <li>고려대학교 대학원 경영학 석사</li>
-          <li>Harvard University Business School CEO's Course 수료</li>
+          <li>화성특례시 미래위원회 위원 (민선 9기)</li>
           <li>화성시산업진흥원 산업전략본부장</li>
           <li>경기도시장상권진흥원 경영기획본부 (행정 2급)</li>
           <li>경기도청 소상공인과 사무관 (5급)</li>
-          <li>화성시푸드통합지원센터 기획팀장</li>
-          <li>중소벤처기업부 골목상권활성화 자문위원</li>
+          <li>고려대학교 대학원 경영학 석사</li>
           <li>행정안전부 등록 행정사 · 안전교육 전문인력</li>
         </ul>
       </div>
@@ -336,7 +341,19 @@ footer .biz{margin-top:12px;color:#7e90ad;font-size:12px;line-height:1.9}
     </div>
 
     <div class="orgnote">
-      <h3>조직 구성 — 4본부 체계</h3>
+      <h3>부대표 윤성수 — 주요 이력 상세</h3>
+      <div class="dprof">
+        <dl>
+          <dt>학 력</dt><dd>고려대학교 대학원 경영학 석사<br>Harvard University Business School — CEO's Course 수료<br>Harvard University Executive Education 수료</dd>
+          <dt>공공 행정</dt><dd>화성시산업진흥원 산업전략본부장<br>경기도시장상권진흥원 경영기획본부 (행정 2급)<br>경기도청 소상공인과 · 비전담당관실 사무관 (5급)<br>화성시푸드통합지원센터 기획팀장<br>화성시청 농정과</dd>
+          <dt>정책 · 선거</dt><dd><b>제21대 대통령선거 더불어민주당 민생전략팀 선임팀장</b><br><b>민선 9기 화성특례시장 선거 정책담당</b><br><b>화성특례시 미래위원회 위원</b> (민선 9기 인수위원회 격)</dd>
+          <dt>정부 자문</dt><dd>중소벤처기업부 골목상권활성화 자문위원<br>대통령실 자영업비서관실 소상공인 자문위원</dd>
+          <dt>자 격</dt><dd>행정안전부 등록 행정사<br>행정안전부 안전교육 전문인력<br>유통관리사 2급</dd>
+          <dt>표 창</dt><dd>산업통상자원부장관 표창<br>중소벤처기업부장관 표창<br>경기도의회 의장 표창</dd>
+        </dl>
+      </div>
+
+      <h3 style="margin-top:32px">조직 구성 — 4본부 체계</h3>
       <div class="org">
         <div class="obox"><b>정책연구본부</b><span>실태조사 · 계획수립 · 성과관리<br>총괄 : 부대표</span></div>
         <div class="obox"><b>컨설팅본부</b><span>행정 · 경영 · 인허가 · 법인설립<br>총괄 : 부대표</span></div>
@@ -495,20 +512,20 @@ footer .biz{margin-top:12px;color:#7e90ad;font-size:12px;line-height:1.9}
 
     <div class="netgrid">
       <div class="netbox">
-        <h4>공공기관 재직 경력</h4>
-        <div class="plist">
-          <span>화성시산업진흥원</span>
-        </div>
-        <p class="note" style="margin-top:9px">부대표 윤성수 — 산업전략본부장 재직</p>
-
-        <h4 style="margin-top:22px">지자체 인적 네트워크</h4>
+        <h4>재직 · 위촉 기관</h4>
         <div class="plist">
           <span>화성특례시</span>
+          <span>화성시산업진흥원</span>
+        </div>
+        <p class="note" style="margin-top:9px">부대표 윤성수 — 화성특례시 미래위원회 위원(민선 9기) · 화성시산업진흥원 산업전략본부장 재직</p>
+
+        <h4 style="margin-top:22px">지자체 협력 네트워크</h4>
+        <div class="plist">
           <span>경기도 광주시</span>
           <span>평택시</span>
           <span>안성시</span>
         </div>
-        <p class="note" style="margin-top:9px">공공 행정 30년간 형성된 실무 · 정책 라인</p>
+        <p class="note" style="margin-top:9px">현직 시장과의 업무 협력 라인 — 공공 행정 30년간 형성</p>
 
         <h4 style="margin-top:22px">민간 · 국제 협력</h4>
         <div class="plist">
