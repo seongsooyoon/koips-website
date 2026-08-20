@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://seongsooyoon.github.io/koips-website/sitemap.xml
