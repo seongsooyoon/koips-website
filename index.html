@@ -441,13 +441,76 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 /* 미래정책포럼 */
 .forum{margin-top:14px;padding:22px 22px 18px;border:1px solid rgba(232,198,169,.34);
   border-left:3px solid #E8C6A9;border-radius:14px;background:rgba(232,198,169,.06)}
+.forum .fmain{display:block}
 .forum .ftag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.8px;color:#14273F;
   background:#D9BE8E;padding:4px 11px;border-radius:20px}
 .forum p{font-size:13.8px;color:#d1dae6;line-height:1.85;margin-top:11px}
 .forum p b{color:#fff}
+/* ===== 기관형 유틸리티 바 ===== */
+.util{background:var(--navy);color:#a8b6c8;font-size:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.util .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 22px;flex-wrap:wrap}
+.util .ut-l{letter-spacing:.3px}
+.util .ut-r{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.util a{color:#E8C6A9;font-weight:700}
+.util a:hover{color:#fff}
+.util em{font-style:normal;color:#8f9dae}
+@media(max-width:640px){.util .ut-l{display:none}.util .wrap{justify-content:center}.util em{display:none}}
+
+/* ===== 퀵메뉴 ===== */
+.quick{background:var(--bg);border-bottom:1px solid var(--line)}
+.quick .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0 22px}
+@media(max-width:820px){.quick .wrap{grid-template-columns:1fr 1fr}}
+.quick a{display:flex;flex-direction:column;gap:3px;padding:24px 20px;border-right:1px solid var(--line);transition:.18s}
+.quick a:first-child{border-left:1px solid var(--line)}
+@media(max-width:820px){
+  .quick a{border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .quick a:nth-child(2n){border-right:1px solid var(--line)}
+}
+.quick a:hover{background:var(--surface)}
+.quick svg{width:26px;height:26px;fill:none;stroke:var(--clay-b);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.quick b{font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.quick span{font-size:12.5px;color:var(--mut)}
+
+/* ===== 알림마당 · 연혁 ===== */
+.newsgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+@media(max-width:840px){.newsgrid{grid-template-columns:1fr}}
+.newsbox{background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--navy2);border-radius:4px 4px 16px 16px;padding:26px 24px}
+.newsbox h4{font-size:16.5px;font-weight:800;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.nlist{list-style:none;display:grid;gap:12px}
+.nlist li{display:flex;gap:14px;align-items:baseline;font-size:13.8px;line-height:1.7}
+.nd{flex-shrink:0;width:82px;font-size:12.3px;font-weight:700;color:var(--clay);font-variant-numeric:tabular-nums}
+.nt{color:var(--sub)}
+.nt b{color:var(--navy)}
+.hist{display:grid;gap:0}
+.hrow{display:flex;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line);font-size:13.8px;line-height:1.75}
+.hrow:last-child{border-bottom:0}
+.hrow b{flex-shrink:0;width:82px;color:var(--navy);font-weight:800;font-variant-numeric:tabular-nums}
+.hrow span{color:var(--sub)}
+@media(max-width:480px){.nlist li,.hrow{flex-direction:column;gap:3px}.nd,.hrow b{width:auto}}
+
+/* ===== 기관형 푸터 ===== */
+.ftop{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,.13)}
+.fbrand b{display:block}
+.fbrand span{display:block;font-size:11.5px;color:#7e8ea6;letter-spacing:1px;margin-top:3px}
+.fnav{display:flex;gap:6px 20px;flex-wrap:wrap}
+.fnav a{font-size:13px;color:#b6c3d4;font-weight:600}
+.fnav a:hover{color:#E8C6A9}
+.fpriv{display:inline-block;margin-top:8px;color:#6f7f96;font-size:11.5px;line-height:1.75}
 </style>
 </head>
 <body id="top">
+
+<div class="util">
+  <div class="wrap">
+    <span class="ut-l">한국정책연구소 · Korea Institute of Policy Studies</span>
+    <span class="ut-r">
+      <a href="tel:010-3745-0126">TEL 010-3745-0126</a>
+      <a href="mailto:coqss@naver.com">coqss@naver.com</a>
+      <em>사업자등록 150-15-02253</em>
+    </span>
+  </div>
+</div>
 
 <header>
   <div class="wrap nav">
@@ -456,14 +519,13 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <span class="tx"><b>한국정책연구소</b><small>KOIPS · KOREA INSTITUTE OF POLICY STUDIES</small></span>
     </a>
     <nav class="menu">
-      <a href="#services">사업분야</a>
-      <a href="#fieldwork">현장 실무</a>
-      <a href="#track">수행 실적</a>
-      <a href="#people">인력 · 조직</a>
-      <a href="#network">협력 네트워크</a>
+      <a href="#about">연구소 소개</a>
+      <a href="#services">연구 · 사업분야</a>
+      <a href="#track">연구실적</a>
+      <a href="#people">조직 · 연구진</a>
+      <a href="#news">알림마당</a>
       <a href="#faq">FAQ</a>
-      <a class="tel" href="tel:010-3745-0126">010-3745-0126</a>
-      <a class="cta" href="#contact">과업 검토 요청</a>
+      <a class="cta" href="#contact">연구용역 문의</a>
     </nav>
   </div>
 </header>
@@ -497,6 +559,15 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     <span>수의계약 · 경쟁입찰 · 단기 자문 모두 상담</span>
   </div>
 </div>
+
+<nav class="quick" aria-label="바로가기">
+  <div class="wrap">
+    <a href="#services"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21V10"/><path d="M11 21V4"/><path d="M16 21v-7"/></svg><b>연구 · 사업분야</b><span>10개 분야 안내</span></a>
+    <a href="#track"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20V4a.5.5 0 0 1 .5-.5Z"/><path d="M14 3.5V8h4"/><path d="M9 13h6M9 16.5h4"/></svg><b>연구실적</b><span>수행 · 제안 구분 표기</span></a>
+    <a href="#people"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M15 15.6c2.6-.7 5.5.8 5.5 3.9"/></svg><b>조직 · 연구진</b><span>5본부 · 미래정책포럼</span></a>
+    <a href="#contact"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg><b>연구용역 문의</b><span>24시간 이내 회신</span></a>
+  </div>
+</nav>
 
 <!-- ABOUT -->
 <section class="blk" id="about">
@@ -1071,6 +1142,41 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 </section>
 
 
+<!-- NEWS & HISTORY -->
+<section class="blk soft" id="news">
+  <div class="wrap">
+    <span class="eyebrow">News &amp; History</span>
+    <h2 class="title">알림마당</h2>
+    <p class="lead">연구소 소식과 연혁입니다. 확인된 사실만 기재하며, 계획이나 예정 사항은 그렇다고 표기합니다.</p>
+
+    <div class="newsgrid">
+      <div class="newsbox">
+        <h4>연구소 소식</h4>
+        <ul class="nlist">
+          <li><span class="nd">2026.08.21</span><span class="nt">홈페이지 개편 및 상담 도우미 <b>저스틴</b> 운영 시작</span></li>
+          <li><span class="nd">2026.08</span><span class="nt"><b>미래정책포럼</b> 신설 — 대표 직속 정책 보좌기구</span></li>
+          <li><span class="nd">2026.04</span><span class="nt">상호를 <b>한국정책연구소(KOIPS)</b>로 전환 · 2대 대표 체제 출범</span></li>
+          <li><span class="nd">2025</span><span class="nt">경기도의회 「공공기관 조직 · 기능 혁신 방안 연구」 수행</span></li>
+          <li><span class="nd">2024</span><span class="nt">농림축산식품부 · aT 「전국 지자체 급식지원센터 운영현황 조사」 수행</span></li>
+        </ul>
+        <p class="note">※ 발간물 · 정책브리프는 미래정책포럼을 통해 순차 공개할 예정입니다.</p>
+      </div>
+
+      <div class="newsbox">
+        <h4>연혁</h4>
+        <div class="hist">
+          <div class="hrow"><b>2023.08</b><span>연구소 설립 (전신 : 수 정책경영연구소) · 사업자등록 150-15-02253</span></div>
+          <div class="hrow"><b>2024</b><span>농림축산식품부 · aT 발주 전국 실태조사 수행<br>법무법인 한별 행정컨설팅 · 의료법인 설립 컨설팅 수행</span></div>
+          <div class="hrow"><b>2025</b><span>경기도의회 공공기관 조직 · 기능 혁신 방안 연구 수행</span></div>
+          <div class="hrow"><b>2026.04</b><span>상호 전환 — 한국정책연구소(KOIPS) · 2대 대표 윤현수 취임</span></div>
+          <div class="hrow"><b>2026.08</b><span>미래정책포럼 신설 · 조직 5본부 체계 정비 · 홈페이지 개편</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- FAQ -->
 <section class="blk tight soft" id="faq">
   <div class="wrap">
@@ -1147,11 +1253,25 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 
 <footer>
   <div class="wrap">
-    <b>한국정책연구소 · KOIPS</b>
+    <div class="ftop">
+      <div class="fbrand">
+        <b>한국정책연구소 · KOIPS</b>
+        <span>Korea Institute of Policy Studies</span>
+      </div>
+      <nav class="fnav">
+        <a href="#about">연구소 소개</a>
+        <a href="#services">연구 · 사업분야</a>
+        <a href="#track">연구실적</a>
+        <a href="#people">조직 · 연구진</a>
+        <a href="#news">알림마당</a>
+        <a href="#contact">연구용역 문의</a>
+      </nav>
+    </div>
     <div class="biz">
-      Korea Institute of Policy Studies &nbsp;|&nbsp; 2대 대표 윤현수 · 고문 윤성수(1대 대표) &nbsp;|&nbsp; 사업자등록번호 150-15-02253<br>
-      경기도 화성시 동탄 &nbsp;|&nbsp; <a href="tel:010-3745-0126">010-3745-0126</a> &nbsp;|&nbsp; <a href="mailto:coqss@naver.com">coqss@naver.com</a><br>
-      © 2026 한국정책연구소. All rights reserved.
+      2대 대표 윤현수 · 고문 윤성수(1대 대표 · 설립자) &nbsp;|&nbsp; 사업자등록번호 150-15-02253 &nbsp;|&nbsp; 설립 2023년 8월<br>
+      경기도 화성시 동탄 &nbsp;|&nbsp; TEL <a href="tel:010-3745-0126">010-3745-0126</a> &nbsp;|&nbsp; E-mail <a href="mailto:coqss@naver.com">coqss@naver.com</a> &nbsp;|&nbsp; 평일 09:00 ~ 19:00<br>
+      <span class="fpriv">개인정보 처리방침 — 문의 접수를 위한 최소 정보(기관명 · 담당자 연락처 · 과업 내용)만 수집하며, 상담 목적 외 사용하지 않고 처리 후 파기합니다.</span><br>
+      © 2026 한국정책연구소(KOIPS). All rights reserved.
     </div>
   </div>
 </footer>
