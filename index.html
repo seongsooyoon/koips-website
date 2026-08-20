@@ -378,6 +378,73 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 .faq details[open] summary{border-bottom:1px solid var(--line)}
 .faq .ans{padding:18px 22px;font-size:14.3px;color:var(--sub);line-height:1.9}
 .faq .ans b{color:var(--navy2)}
+/* 인력 섹션 접기 */
+.advmore{margin-top:20px}
+.advmore summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:9px;
+  font-size:13.5px;font-weight:700;color:#E8C6A9;border:1px solid rgba(232,198,169,.4);
+  padding:10px 18px;border-radius:10px;background:rgba(255,255,255,.05);transition:.18s}
+.advmore summary:hover{background:rgba(255,255,255,.1)}
+.advmore summary::-webkit-details-marker{display:none}
+.advmore summary::after{content:"+";font-weight:800;font-size:16px}
+.advmore[open] summary::after{content:"2"}
+.advmore[open] summary{margin-bottom:16px}
+
+/* ===== 저스틴 챗봇 ===== */
+.jstn{position:fixed;right:20px;bottom:20px;z-index:80;font-family:inherit}
+@media(max-width:760px){.jstn{right:12px;bottom:74px}}
+.jstn-fab{display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;
+  background:var(--clay-b);color:#fff;font-family:inherit;font-size:14.5px;font-weight:800;letter-spacing:-.2px;
+  padding:14px 20px;border-radius:40px;box-shadow:0 16px 34px -14px rgba(162,84,47,.95);transition:.18s}
+.jstn-fab:hover{background:#C06B41;transform:translateY(-2px)}
+.jstn-fab svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:420px){.jstn-fab span{display:none}.jstn-fab{padding:15px}}
+.jstn-panel{position:absolute;right:0;bottom:0;width:min(92vw,380px);height:min(76vh,560px);
+  display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(20,39,63,.65);
+  opacity:0;transform:translateY(12px) scale(.98);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+.jstn.on .jstn-panel{opacity:1;transform:none;pointer-events:auto}
+.jstn.on .jstn-fab{opacity:0;pointer-events:none}
+.jstn-head{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:15px 17px;background:var(--grad);color:#fff}
+.jstn-head b{display:block;font-size:16px;font-weight:800;letter-spacing:-.3px}
+.jstn-head span{display:block;font-size:11.5px;color:#cfdbea;margin-top:1px}
+.jstn-x{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;padding:0 4px;opacity:.85}
+.jstn-x:hover{opacity:1}
+.jstn-log{flex:1;overflow-y:auto;padding:16px 15px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
+.jstn-msg{display:flex;gap:8px;align-items:flex-start}
+.jstn-msg.me{justify-content:flex-end}
+.jstn-av{flex-shrink:0;width:27px;height:27px;border-radius:50%;background:var(--navy2);color:#E8C6A9;
+  font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.jstn-bub{max-width:80%;padding:11px 14px;border-radius:14px;font-size:13.6px;line-height:1.75;
+  background:var(--surface);border:1px solid var(--line);color:var(--sub)}
+.jstn-msg.me .jstn-bub{background:var(--navy2);color:#fff;border-color:var(--navy2);max-width:84%}
+.jstn-bub b{color:var(--navy)}
+.jstn-msg.me .jstn-bub b{color:#fff}
+.jstn-note,.js-note{display:inline-block;margin-top:7px;font-size:11.8px;color:var(--mut);line-height:1.6}
+.jstn-btn{display:inline-block;margin:8px 6px 0 0;padding:9px 15px;border-radius:9px;
+  background:var(--clay-b);color:#fff;font-size:12.8px;font-weight:700}
+.jstn-btn.ghost{background:var(--surface);color:var(--navy);border:1px solid var(--line2)}
+.jstn-chips{display:flex;flex-wrap:wrap;gap:7px;padding:11px 14px 0;background:var(--bg)}
+.jstn-chip{cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--navy);
+  background:var(--surface);border:1px solid var(--line2);padding:8px 13px;border-radius:20px;transition:.15s}
+.jstn-chip:hover{border-color:var(--clay-s);color:var(--clay)}
+.jstn-form{display:flex;gap:8px;padding:12px 14px 6px;background:var(--bg)}
+.jstn-in{flex:1;font-family:inherit;font-size:13.6px;color:var(--ink);padding:11px 14px;
+  border:1px solid var(--line2);border-radius:11px;background:var(--surface);outline:none}
+.jstn-in:focus{border-color:var(--clay-s)}
+.jstn-send{flex-shrink:0;width:42px;border:0;border-radius:11px;background:var(--clay-b);cursor:pointer}
+.jstn-send svg{width:19px;height:19px;margin:0 auto;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.jstn-send:hover{background:#C06B41}
+.jstn-foot{padding:2px 15px 12px;font-size:11px;color:var(--mut);background:var(--bg);line-height:1.6}
+.jstn-foot a{color:var(--clay);font-weight:700}
+@media (prefers-reduced-motion:reduce){.jstn-panel{transition:none}.jstn-fab:hover{transform:none}}
+/* 미래정책포럼 */
+.forum{margin-top:14px;padding:22px 22px 18px;border:1px solid rgba(232,198,169,.34);
+  border-left:3px solid #E8C6A9;border-radius:14px;background:rgba(232,198,169,.06)}
+.forum .ftag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.8px;color:#14273F;
+  background:#D9BE8E;padding:4px 11px;border-radius:20px}
+.forum p{font-size:13.8px;color:#d1dae6;line-height:1.85;margin-top:11px}
+.forum p b{color:#fff}
 </style>
 </head>
 <body id="top">
@@ -431,14 +498,52 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
   </div>
 </div>
 
+<!-- ABOUT -->
+<section class="blk" id="about">
+  <div class="wrap">
+    <span class="eyebrow">About KOIPS</span>
+    <h2 class="title">대표 인사말</h2>
+    <p class="lead">정책은 책상이 아니라 현장에서 완성됩니다.</p>
+
+    <div class="ceo">
+      <div class="ph"><img src="media/ceo_yoonhs.jpg" alt="한국정책연구소 2대 대표 윤현수"></div>
+      <div class="msg">
+        <p>안녕하십니까. 한국정책연구소 <b>2대 대표 윤현수</b>입니다.</p>
+        <p>저는 20여 년간 기업을 직접 경영하며 현장의 문제를 풀어 왔고, 중국에서 오랜 시간을 보내며
+           한 · 중 양국의 산업과 문화를 잇는 일을 해 왔습니다. 그 시간이 저에게 가르쳐 준 것은 하나였습니다.
+           <b>좋은 계획보다 실행되는 계획이 낫다</b>는 것입니다.</p>
+        <p>우리 연구소의 힘은 사람에게서 나옵니다. 화성시청 · 화성시푸드통합지원센터 · 경기도청 ·
+           경기도시장상권진흥원 · 화성시산업진흥원에서 급식과 상권 정책을 직접 설계하고 집행해 온
+           <b>윤성수 고문</b>(1대 대표), 국가기관 홍보영상을 만들어 온 <b>박주현 영상 총괄 디렉터</b>가 함께합니다.
+           연구 · 컨설팅 · 영상을 한 곳에서 끝내는 구조입니다.</p>
+        <p>현장을 존중하고, 근거로 말하며, 약속한 것을 지키겠습니다. 감사합니다.</p>
+        <div class="sign">한국정책연구소 2대 대표 <b>윤 현 수</b></div>
+
+        <details class="more">
+          <summary>대표 프로필 · 국제 활동 자세히 보기</summary>
+          <div class="prof">
+            <dl>
+              <dt>성 명</dt><dd>윤현수 (尹鉉洙 · YOON HYUN SOO)</dd>
+              <dt>현 직</dt><dd>한국정책연구소 2대 대표<br>광저우 한인무역협회 회장<br>㈜세컨드스토리 대표</dd>
+              <dt>학 력</dt><dd>중국 정주대학(郑州大学) 중국어<br>중국 허난농업대학(河南农业大学) 중국어</dd>
+              <dt>주요 경력</dt><dd>㈜세컨드스토리 대표 (2018 ~ 현재)<br>에스엔바이오 대표 (2010 ~ 2018)<br>교통관광신문 기자 (2002 ~ 2004)</dd>
+              <dt>국제 활동<br><span style="font-weight:600;font-size:11.5px;color:var(--clay)">(전 항목 현직)</span></dt><dd>광저우 한인무역협회 회장<br>한중문화협회 운영이사<br>중국 허난성 중원은행 · 초상은행 투자유치 고문<br>북경문화협회 한국문화 교류위원<br>중국 심양시 한국 투자유치 고문</dd>
+            </dl>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
-<section class="blk tall" id="services">
+<section class="blk tall soft" id="services">
   <div class="wrap">
     <span class="eyebrow">Services</span>
     <h2 class="title">사업분야</h2>
     <p class="lead">사업자등록상 <b>전문 · 과학 · 기술서비스업 / 정보통신업 / 교육서비스업</b>을 등록하고,
        종목으로 <b>경제경영학 연구개발업 · 경영컨설팅업 · 미디어콘텐츠창작업</b>을 갖추었습니다.
-       아래 9개 분야는 등록 종목과 실제 수행 실적이 겹치는 영역이며, 각 분야마다
+       아래 10개 분야는 등록 종목 · 국가자격(행정사) · 실제 수행 실적이 겹치는 영역이며, 각 분야마다
        <b style="color:var(--clay)">화성시 · 경기도에서 직접 수행한 행정 실무</b>를 근거로 함께 표기했습니다.</p>
     <div class="sgrid">
 
@@ -477,8 +582,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <li>참가기업 모집 · 부스 · 바이어 매칭</li>
           <li>관람객 조사 · 파급효과 분석</li>
         </ul>
-        <div class="field"><b>화성시 · 경기도 현장 근거</b>
-          경기도청 재직 시 <b>대한민국 기본소득박람회 · 경기도 우수시장 박람회</b>를 직접 추진했습니다. 기획부터 현장 운영, 결과 분석까지 전 과정 경험입니다.</div>
+        <div class="field"><b>담당 · 박주현 영상 총괄 디렉터</b>
+          박람회 · 행사 기획운영은 <b>박주현 감독</b>이 총괄합니다.<br>
+          정책 근거는 경기도청 재직 시 <b>대한민국 기본소득박람회 · 경기도 우수시장 박람회</b>를 직접 추진한 경험(고문 윤성수)입니다. 기획부터 현장 운영, 결과 분석까지 전 과정을 수행합니다.</div>
       </div>
 
       <div class="scard">
@@ -503,8 +609,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <li>사업 성과 기록물 · 다큐멘터리</li>
           <li>유튜브 · 숏폼 · 외국어 자막</li>
         </ul>
-        <div class="field"><b>화성시 · 경기도 현장 근거</b>
-          전속 영상 디렉터가 화성시 기업 홍보 · 외국어 유튜브 영상을 제작했습니다. 연구와 영상을 한 곳에서 끝냅니다.</div>
+        <div class="field"><b>담당 · 박주현 영상 총괄 디렉터</b>
+          미디어 · 콘텐츠는 <b>박주현 감독</b>이 총괄합니다. 문화재청 특별전, 여성가족부 캠페인, 화성시 기업 홍보 · 외국어 유튜브 영상을 제작했습니다. 연구와 영상을 한 곳에서 끝냅니다.</div>
       </div>
 
       <div class="scard">
@@ -548,6 +654,25 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       </div>
 
       <div class="scard w6">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20V4a.5.5 0 0 1 .5-.5Z"/><path d="M14 3.5V8h4"/><path d="M9 13h6"/><path d="M9 16.5h4"/></svg>
+        <h3>행정사 업무 <span style="font-size:12px;font-weight:700;color:var(--clay);letter-spacing:.3px">행정안전부 등록 행정사 윤성수</span></h3><span class="biz">행정사법 제2조 법정 업무</span>
+        <ul>
+          <li>행정기관에 제출하는 서류의 작성</li>
+          <li>권리 · 의무나 사실증명에 관한 서류의 작성</li>
+          <li>행정기관의 업무에 관련된 서류의 번역</li>
+          <li>위 서류의 제출 대행</li>
+          <li>인가 · 허가 및 면허 등을 받기 위한 신청 · 청구 · 신고의 <b>대리</b></li>
+          <li>행정 관계 법령 및 행정에 대한 상담 · 자문에 대한 응답</li>
+          <li>법령에 따라 위탁받은 사무의 사실 조사 및 확인</li>
+          <li>인허가 · 등록 · 신고 등 행정절차 전반의 실무 대행</li>
+        </ul>
+        <div class="field"><b>법적 근거 및 범위</b>
+          위 7개 항목은 <b>행정사법 제2조 제1항</b>이 정한 행정사의 법정 업무이며, 행정안전부에 등록된 행정사 <b>윤성수</b>(당사 고문 · 1대 대표)가 수행합니다.
+          법인 설립 · 의료법인 설립 · 외환거래 신고 등 실제 수행 실적을 보유하고 있습니다.<br>
+          ※ 같은 조 단서에 따라 <b>다른 법률에서 제한한 업무는 수행하지 않습니다.</b> 소송 대리 등 변호사법상 변호사의 직무에 속하는 업무는 취급하지 않으며, 필요한 경우 협력 법무법인(법무법인 한별)과 연계합니다.</div>
+      </div>
+
+      <div class="scard w6">
         <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.6 3.7 5.7 3.7 9S14.4 18.4 12 21c-2.4-2.6-3.7-5.7-3.7-9S9.6 5.6 12 3Z"/></svg>
         <h3>국제협력 · 한중 교류</h3><span class="biz">정보통신업 · 컨설팅업</span>
         <ul>
@@ -558,8 +683,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <li>해외 참가단 유치 · 통상 연계</li>
           <li>현지 실사 · 상담회 운영 지원</li>
         </ul>
-        <div class="field"><b>현장 근거</b>
-          2대 대표가 광저우 한인무역협회 회장 · 중국 허난성 중원은행 및 초상은행 투자유치 고문 · 중국 심양시 한국 투자유치 고문으로 <b>현직 활동 중</b>입니다. 지방정부의 자체 통상외교가 본격화되는 국면에서, 현지 네트워크를 가진 파트너의 희소가치가 높아집니다.</div>
+        <div class="field"><b>담당 · 윤현수 2대 대표</b>
+          국제협력 · 한중 교류는 <b>윤현수 대표</b>가 직접 맡습니다. 광저우 한인무역협회 회장 · 중국 허난성 중원은행 및 초상은행 투자유치 고문 · 중국 심양시 한국 투자유치 고문으로 <b>현직 활동 중</b>입니다. 지방정부의 자체 통상외교가 본격화되는 국면에서, 현지 네트워크를 가진 파트너의 희소가치가 높아집니다.</div>
       </div>
 
     </div>
@@ -672,7 +797,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 </section>
 
 <!-- TRACK RECORD -->
-<section class="blk soft" id="track">
+<section class="blk" id="track">
   <div class="wrap">
     <span class="eyebrow">Track Record</span>
     <h2 class="title">주요 수행 실적</h2>
@@ -733,7 +858,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="pbox">
         <div class="rk">2대 대표 · 현 대표</div>
         <div class="nm">윤현수</div>
-        <div class="ro">한국정책연구소 국제협력 · 경영 총괄</div>
+        <div class="ro">한국정책연구소 <b style="color:#E8C6A9">국제협력 · 한중교류 총괄</b> · 경영</div>
         <ul>
           <li>광저우 한인무역협회 회장 <b style="color:#E8C6A9">현직</b></li>
           <li>한중문화협회 운영이사 <b style="color:#E8C6A9">현직</b></li>
@@ -747,8 +872,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="pbox">
         <div class="rk">고문 · 1대 대표(설립자)</div>
         <div class="nm">윤성수 <em class="lic">행정사</em></div>
-        <div class="ro">한국정책연구소 정책연구 · 공공행정 총괄</div>
+        <div class="ro">한국정책연구소 <b style="color:#E8C6A9">정책연구 · 공공행정 · AI 자동화 총괄</b></div>
         <ul>
+          <li><b style="color:#E8C6A9">AI 전문가 · 업무 자동화 프로그램 설계자</b></li>
           <li>화성특례시 미래위원회 위원 (민선 9기)</li>
           <li>화성시산업진흥원 산업전략본부장</li>
           <li>경기도시장상권진흥원 경영기획본부 (행정 2급)</li>
@@ -761,7 +887,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="pbox">
         <div class="rk">CREATIVE · 영상 총괄</div>
         <div class="nm">박주현</div>
-        <div class="ro">한국정책연구소 영상 총괄 디렉터 · 프로듀서</div>
+        <div class="ro">한국정책연구소 영상 총괄 디렉터 · <b style="color:#E8C6A9">미디어 · 박람회 총괄</b></div>
         <ul>
           <li>문화재청 · 국립고궁박물관 특별전 영상 연출</li>
           <li>여성가족부 캠페인 사진 · 영상 제작</li>
@@ -772,7 +898,21 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
     </div>
 
     <div class="orgnote">
-      <h3>고문 윤성수 (1대 대표) — 주요 이력 상세</h3>
+      <h3>2대 대표 윤현수 — 주요 이력 상세</h3>
+      <div class="dprof">
+        <dl>
+          <dt>성 명</dt><dd>윤현수 (尹鉉洙 · YOON HYUN SOO)</dd>
+          <dt>담당 영역</dt><dd><b>국제협력 · 한중 교류 총괄</b><br>경영 총괄 · 대외 협력</dd>
+          <dt>현 직</dt><dd>한국정책연구소 2대 대표<br><span class="hlrole">광저우 한인무역협회 회장</span><br>㈜세컨드스토리 대표</dd>
+          <dt>학 력</dt><dd>중국 정주대학(郑州大学) 중국어<br>중국 허난농업대학(河南农业大学) 중국어</dd>
+          <dt>주요 경력</dt><dd>㈜세컨드스토리 대표 (2018 ~ 현재)<br>에스엔바이오 대표 (2010 ~ 2018)<br>교통관광신문 기자 (2002 ~ 2004)</dd>
+          <dt>국제 활동<br><span style="font-weight:600;font-size:11.5px;color:#E8C6A9">(전 항목 현직)</span></dt><dd>광저우 한인무역협회 회장<br>한중문화협회 운영이사<br>중국 허난성 중원은행 · 초상은행 투자유치 고문<br>북경문화협회 한국문화 교류위원<br>중국 심양시 한국 투자유치 고문</dd>
+        </dl>
+      </div>
+
+      <p class="note" style="color:#9fb0c6;margin-top:18px">한국정책연구소의 공공행정 역량은 설립자이자 현 고문인 윤성수의 실무 이력을 배경으로 합니다.</p>
+      <details class="advmore">
+        <summary>연구소의 공공행정 배경 — 고문 윤성수 (1대 대표 · 설립자) 이력 보기</summary>
       <div class="dprof">
         <dl>
           <dt>학 력</dt><dd>고려대학교 대학원 경영학 석사<br>Harvard University Business School — CEO's Course 수료<br>Harvard University Executive Education 수료</dd>
@@ -780,23 +920,40 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <dt>정책 · 선거</dt><dd>제21대 대통령선거 더불어민주당 민생전략팀 <span class="hlrole">선임팀장</span><br>민선 9기 화성특례시장 선거 <span class="hlrole">정책담당</span><br>화성특례시 미래위원회 <span class="hlrole">위원</span> (민선 9기 인수위원회 격)<br>민선 9기 용인시장 선거 — 용인시 공공기관 경영혁신 과제 수행</dd>
           <dt>정부 자문</dt><dd>중소벤처기업부 골목상권활성화 자문위원<br>대통령실 자영업비서관실 소상공인 자문위원</dd>
           <dt>주요 성과</dt><dd>대한민국 기본소득박람회 · 경기도 우수시장 박람회 추진<br>경기도 지역화폐 사업 추진<br>경기도 31개 시군 전통시장 · 소상공인 지원사업 총괄<br>화성시 급식체계 · 로컬푸드 활성화 사업 기획 · 시행<br>9개 시 · 군 급식 공급 체계 운영 (화성시푸드통합지원센터)</dd>
+          <dt>AI · 자동화</dt><dd><b>AI 전문가 · 업무 자동화 프로그램 설계자</b><br>조직관리 시스템 · 임명장 자동제작 발송 · 실시간 상황판 · 일일 정세보고 자동화 등 자체 개발 · 실전 검증<br>공공 · 캠프 조직 운영 업무의 자동화 설계</dd>
           <dt>자 격</dt><dd><span class="hlrole">행정안전부 등록 행정사</span><br>행정안전부 안전교육 전문인력<br>유통관리사 2급</dd>
           <dt>표 창</dt><dd>산업통상자원부장관 표창<br>중소벤처기업부장관 표창<br>경기도의회 의장 표창</dd>
         </dl>
       </div>
+      </details>
 
       <h3 style="margin-top:32px">조직 구성 — 5본부 체계</h3>
       <div class="org">
         <div class="obox"><b>정책연구본부</b><span>실태조사 · 계획수립 · 성과관리<br>총괄 : 고문</span></div>
         <div class="obox"><b>컨설팅본부</b><span>행정 · 경영 · 인허가 · 법인설립<br>총괄 : 고문</span></div>
-        <div class="obox"><b>박람회사업본부</b><span>타당성조사 · 기본계획 · 운영 · 파급효과 분석<br>총괄 : 고문</span></div>
-        <div class="obox"><b>미디어스튜디오</b><span>영상 기획 · 촬영 · 편집 · 배포<br>총괄 : 영상 디렉터</span></div>
-        <div class="obox"><b>국제협력본부</b><span>한중 교류 · 투자유치 · 통상<br>총괄 : 2대 대표</span></div>
+        <div class="obox"><b>박람회사업본부</b><span>타당성조사 · 기본계획 · 운영 · 파급효과 분석<br>총괄 : 박주현 감독</span></div>
+        <div class="obox"><b>미디어스튜디오</b><span>영상 기획 · 촬영 · 편집 · 배포<br>총괄 : 박주현 감독</span></div>
+        <div class="obox"><b>국제협력본부</b><span>한중 교류 · 투자유치 · 통상<br>총괄 : 윤현수 대표</span></div>
       </div>
       <div class="org" style="margin-top:13px">
         <div class="obox" style="grid-column:1/-1"><b>박람회사업본부 — 세부 구성</b><span>기획연구팀(타당성 · 수요조사 · 파급효과 분석) · 운영팀(참가기업 모집 · 부스 · 현장운영) · 마케팅팀(홍보 · 바이어 매칭 · 영상, 미디어스튜디오 협업) · 국제팀(해외 참가단 · 통상 연계, 국제협력본부 협업)</span></div>
       </div>
       <p class="note" style="color:#8fa0b6">과업 규모에 따라 법률 · 회계 · 통계 · 도시계획 등 분야별 외부 전문가를 연구원으로 위촉하여 팀을 구성합니다.</p>
+
+      <h3 style="margin-top:34px">미래정책포럼 <span style="font-size:12.5px;font-weight:700;color:#E8C6A9;letter-spacing:.4px">FUTURE POLICY FORUM · 대표 직속 보좌기구</span></h3>
+      <div class="forum">
+        <div class="fmain">
+          <div class="ftag">대표 직속 · 별도 싱크탱크</div>
+          <p><b>미래정책포럼</b>은 수주 실무를 담당하는 5본부와 분리되어, <b>대표를 직접 보좌하는 정책 싱크탱크</b>입니다.
+             당장의 과업이 아니라 <b>다음에 올 의제</b>를 먼저 읽고, 연구소 전체의 방향과 논리를 공급합니다.</p>
+        </div>
+        <div class="org" style="margin-top:14px">
+          <div class="obox"><b>정책의제 발굴</b><span>인구감소 · 지역소멸 · 기후 · 산업전환 등 중장기 의제 선점</span></div>
+          <div class="obox"><b>전문가 자문단</b><span>학계 · 법률 · 산업 · 안보 분야 외부 전문가 상시 자문 풀</span></div>
+          <div class="obox"><b>정책 세미나 · 포럼</b><span>지자체 · 기관 대상 정책 토론회 기획 · 운영</span></div>
+          <div class="obox"><b>연구 · 제언 발간</b><span>정책 브리프 · 제언 보고서 작성 및 배포</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -817,44 +974,6 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
       <div class="vcard"><div class="n">03</div><div>
         <h4>끝까지 가는 책임</h4>
         <p>납품이 종료가 아닙니다. 성과관리 · 모니터링까지 설계해 정책이 실제로 작동하는지 확인합니다.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="blk soft" id="about">
-  <div class="wrap">
-    <span class="eyebrow">About KOIPS</span>
-    <h2 class="title">대표 인사말</h2>
-    <p class="lead">정책은 책상이 아니라 현장에서 완성됩니다.</p>
-
-    <div class="ceo">
-      <div class="ph"><img src="media/ceo_yoonhs.jpg" alt="한국정책연구소 2대 대표 윤현수"></div>
-      <div class="msg">
-        <p>안녕하십니까. 한국정책연구소 <b>2대 대표 윤현수</b>입니다.</p>
-        <p>저는 20여 년간 기업을 직접 경영하며 현장의 문제를 풀어 왔고, 중국에서 오랜 시간을 보내며
-           한 · 중 양국의 산업과 문화를 잇는 일을 해 왔습니다. 그 시간이 저에게 가르쳐 준 것은 하나였습니다.
-           <b>좋은 계획보다 실행되는 계획이 낫다</b>는 것입니다.</p>
-        <p>우리 연구소의 힘은 사람에게서 나옵니다. 화성시청 · 화성시푸드통합지원센터 · 경기도청 ·
-           경기도시장상권진흥원 · 화성시산업진흥원에서 급식과 상권 정책을 직접 설계하고 집행해 온
-           <b>윤성수 고문</b>(1대 대표), 국가기관 홍보영상을 만들어 온 <b>박주현 영상 총괄 디렉터</b>가 함께합니다.
-           연구 · 컨설팅 · 영상을 한 곳에서 끝내는 구조입니다.</p>
-        <p>현장을 존중하고, 근거로 말하며, 약속한 것을 지키겠습니다. 감사합니다.</p>
-        <div class="sign">한국정책연구소 2대 대표 <b>윤 현 수</b></div>
-
-        <details class="more">
-          <summary>대표 프로필 · 국제 활동 자세히 보기</summary>
-          <div class="prof">
-            <dl>
-              <dt>성 명</dt><dd>윤현수 (尹鉉洙 · YOON HYUN SOO)</dd>
-              <dt>현 직</dt><dd>한국정책연구소 2대 대표<br>광저우 한인무역협회 회장<br>㈜세컨드스토리 대표</dd>
-              <dt>학 력</dt><dd>중국 정주대학(郑州大学) 중국어<br>중국 허난농업대학(河南农业大学) 중국어</dd>
-              <dt>주요 경력</dt><dd>㈜세컨드스토리 대표 (2018 ~ 현재)<br>에스엔바이오 대표 (2010 ~ 2018)<br>교통관광신문 기자 (2002 ~ 2004)</dd>
-              <dt>국제 활동<br><span style="font-weight:600;font-size:11.5px;color:var(--clay)">(전 항목 현직)</span></dt><dd>광저우 한인무역협회 회장<br>한중문화협회 운영이사<br>중국 허난성 중원은행 · 초상은행 투자유치 고문<br>북경문화협회 한국문화 교류위원<br>중국 심양시 한국 투자유치 고문</dd>
-            </dl>
-          </div>
-        </details>
-      </div>
     </div>
   </div>
 </section>
@@ -882,6 +1001,16 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
           <span>안성시</span>
         </div>
         <p class="note" style="margin-top:9px">현직 시장과의 업무 협력 라인 — 공공 행정 30년간 형성</p>
+
+        <h4 style="margin-top:22px">주요 고객사</h4>
+        <div class="plist">
+          <span>다우닝가구</span>
+          <span>바인그룹</span>
+          <span>메디피움 의료법인</span>
+          <span>한주양조</span>
+          <span>노드메이슨 · HOMEBASE</span>
+        </div>
+        <p class="note" style="margin-top:9px">가구 · 교육 · 의료 · 식품 등 민간 기업 대상 경영 · 행정 컨설팅 수행</p>
 
         <h4 style="margin-top:22px">민간 · 국제 협력</h4>
         <div class="plist">
@@ -1045,5 +1174,6 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(-
 })();
 </script>
 
+<script src="justin.js" defer></script>
 </body>
 </html>
