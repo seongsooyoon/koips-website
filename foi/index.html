@@ -70,7 +70,7 @@
     <p class="status wait" id="status" role="status">서비스 주소를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>
     <div class="actions">
       <a class="btn primary" id="go-login" href="#" aria-disabled="true">작성기 로그인</a>
-      <a class="btn" id="go-signup" href="#" aria-disabled="true">가입 신청</a>
+      <a class="btn" id="go-signup" href="#" aria-disabled="true">회원 가입</a>
       <a class="btn" id="go-find" href="#" aria-disabled="true">아이디·비밀번호 찾기</a>
     </div>
     <p class="note" style="margin:14px 0 0">처음 접속하면 연결 안내 화면이 한 번 나올 수 있습니다. <b>Visit Site</b> 버튼을 누르면 작성기로 이동합니다.</p>
@@ -78,8 +78,8 @@
 
   <h2>이용 순서</h2>
   <ol class="steps">
-    <li><b>가입 신청</b><span>기관명·성명·이메일 입력</span></li>
-    <li><b>관리자 승인</b><span>아이디 부여 후 '가입 상태 확인'</span></li>
+    <li><b>가입</b><span>기관명·아이디·이메일 입력</span></li>
+    <li><b>바로 사용</b><span>승인 없이 즉시 로그인</span></li>
     <li><b>답변서 초안</b><span>자료를 끌어다 놓고 결정통지서 HWP 작성</span></li>
     <li><b>블럭 처리</b><span>가릴 이름·업체명 입력 후 HWP 내려받기</span></li>
   </ol>
@@ -88,7 +88,7 @@
   <ul class="feat">
     <li>「공공기관의 정보공개에 관한 법률」 제9조 비공개 사유를 반영한 결정통지서 초안 (법제처 법령 API 연동)</li>
     <li>HWP·HWPX 원본 서식 유지 가림, PDF 영구 가림, Word·엑셀 가림본 + HWPX 변환본, 블럭처리 내역서</li>
-    <li>기관별 계정·승인 관리, 청구 건별 이력 보관, 관리자 통계·이용 기록</li>
+    <li>기관별 계정 관리, 청구 건별 이력 보관(구글드라이브), 청구서 자동 인식, 관리자 통계·이용 기록</li>
   </ul>
 </main>
 
@@ -96,7 +96,7 @@
   <div class="wrap">제작: 한국정책연구소(KOIPS) · Korea Institute of Policy Studies</div>
 </footer>
 
-<script src="config.js?v=2"></script>
+<script src="config.js?v=3"></script>
 <script>
 (function () {
   var url = (window.FOI_SERVER_URL || "").replace(/\/+$/, "");
