@@ -173,18 +173,48 @@
   .cta { margin-top:36px; text-align:center; }
   .cta .btn { display:inline-flex; min-width:220px; }
   @media (max-width: 760px) { .grid3 { grid-template-columns: 1fr; } }
+
+  header.nav { position:sticky; top:0; z-index:10; background:#fff; border-top:4px solid var(--navy); border-bottom:1px solid var(--line); }
+  .navbar { display:flex; align-items:center; gap:20px; height:64px; }
+  .brand img { height:32px; display:block; }
+  header.nav nav { display:flex; gap:4px; flex:1; overflow-x:auto; scrollbar-width:none; }
+  header.nav nav::-webkit-scrollbar { display:none; }
+  header.nav nav a { white-space:nowrap; padding:8px 12px; border-radius:8px; font-size:15px; font-weight:600; color:var(--sub); text-decoration:none; }
+  header.nav nav a:hover { background:var(--soft); color:var(--navy); }
+  .navcta { display:flex; gap:8px; }
+  .nbtn { white-space:nowrap; padding:8px 14px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; border:1px solid var(--line); color:var(--navy); background:#fff; }
+  .nbtn.primary { background:var(--navy); color:#fff; border-color:var(--navy); }
+  section[id], h2[id], div[id] { scroll-margin-top:80px; }
+  html { scroll-behavior:smooth; }
+  @media (max-width: 760px) {
+    .navbar { flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:6px; gap:8px 12px; }
+    .navcta { margin-left:auto; }
+    header.nav nav { order:3; flex-basis:100%; margin:0 -8px; }
+    header.nav nav a { padding:6px 10px; font-size:14px; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap top">
-    <a href="../" aria-label="한국정책연구소 홈"><img src="../media/logo.png" alt="KOIPS 한국정책연구소"></a>
-    <a class="home" href="../">한국정책연구소 홈페이지</a>
+<header class="nav">
+  <div class="wrap navbar">
+    <a class="brand" href="../" aria-label="한국정책연구소 홈"><img src="../media/logo.png" alt="KOIPS 한국정책연구소"></a>
+    <nav aria-label="주 메뉴">
+      <a href="#about">소개</a>
+      <a href="#uses">주요 업무</a>
+      <a href="#steps">이용 순서</a>
+      <a href="#features">기능</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="#contact">도입 문의</a>
+    </nav>
+    <div class="navcta">
+      <a class="nbtn" id="nav-signup" href="#h-go" rel="nofollow">회원 가입</a>
+      <a class="nbtn primary" id="nav-login" href="#h-go" rel="nofollow">로그인</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero">
+  <section class="hero" id="about">
     <p class="kicker">전국 공공기관 정보공개 · 민원 업무 지원</p>
     <h1>정보공개 답변서 작성기</h1>
     <p class="lead">청구서와 관련 자료를 한 번에 올리면 <b>정보공개 결정통지서 초안</b>, <b>비공개 사유 법률 검토</b>, <b>개인정보 블럭처리</b>, <b>국민신문고 민원 답변 초안</b>까지 만들어 드립니다. 담당자는 확인하고 고치기만 하면 됩니다.</p>
@@ -201,14 +231,14 @@
     <p class="note" style="margin:14px 0 0">처음 접속하면 연결 안내 화면이 한 번 나올 수 있습니다. <b>Visit Site</b> 버튼을 누르면 작성기로 이동합니다.</p>
   </section>
 
-  <h2>이런 업무에 씁니다</h2>
+  <h2 id="uses">이런 업무에 씁니다</h2>
   <div class="grid3">
     <div class="mode"><h3>정보공개 답변서 작성</h3><p>청구 항목별로 공개·부분공개·비공개·정보부존재를 판단하고, 정보공개법 제9조 근거를 넣은 결정통지서와 답변서 초안을 HWP로 만듭니다.</p></div>
     <div class="mode"><h3>개인정보 블럭처리</h3><p>공개할 자료 속 이름·주민등록번호·전화번호·주소·업체명을 찾아 HWP 서식 그대로 가립니다. 내려받기 전 가림 미리보기로 확인합니다.</p></div>
     <div class="mode"><h3>국민신문고 민원 답변</h3><p>민원을 요지별로 나누고, 공공데이터에 공개된 다른 기관 공무원의 실제 답변 사례와 법령해석을 참고로 보여 주며 회신 초안을 만듭니다.</p></div>
   </div>
 
-  <h2>이용 순서</h2>
+  <h2 id="steps">이용 순서</h2>
   <ol class="steps">
     <li><b>가입</b><span>기관명·아이디·이메일 입력, 승인 없이 바로 사용</span></li>
     <li><b>한 번에 올리기</b><span>청구서와 관련 자료를 함께 끌어다 놓기</span></li>
@@ -216,7 +246,7 @@
     <li><b>확인 후 내려받기</b><span>결정통지서·답변서·블럭처리본 HWP</span></li>
   </ol>
 
-  <h2>주요 기능</h2>
+  <h2 id="features">주요 기능</h2>
   <ul class="feat">
     <li>「공공기관의 정보공개에 관한 법률」 제9조 비공개 사유를 반영한 결정통지서·답변서 초안 (법제처 법령 연동)</li>
     <li>담당자가 쓴 답변서의 법률 검토: 빠진 근거, 결정과 본문의 불일치, 불복 절차 안내 누락 점검</li>
@@ -227,7 +257,7 @@
     <li>기관별 계정, 청구 건별 이력 보관, 같은 청구인의 종전 청구와 결정 비교</li>
   </ul>
 
-  <h2>자주 묻는 질문</h2>
+  <h2 id="faq">자주 묻는 질문</h2>
   <div class="faq">
     <details><summary>어떤 기관이 사용할 수 있나요?</summary><p>중앙행정기관, 지방자치단체, 공사·공단, 출연기관 등 정보공개 청구를 처리하는 전국의 공공기관 담당자가 사용할 수 있습니다. 기관명과 아이디만으로 가입하면 승인 없이 바로 쓸 수 있습니다.</p></details>
     <details><summary>한글(HWP) 문서도 그대로 처리되나요?</summary><p>네. HWP·HWPX 원본 서식을 유지한 채 개인정보와 업체명을 가리고, PDF는 영구 가림 처리합니다. Word·엑셀 자료도 가림본으로 만들 수 있습니다.</p></details>
@@ -237,7 +267,7 @@
     <details><summary>비용이 드나요?</summary><p>현재 도입 문의를 받고 있습니다. 기관 규모와 사용 범위에 맞춰 안내해 드리니 이메일(coqss@naver.com)로 문의해 주세요.</p></details>
   </div>
 
-  <div class="cta">
+  <div class="cta" id="contact">
     <a class="btn primary" href="mailto:coqss@naver.com?subject=%5B%EC%A0%95%EB%B3%B4%EA%B3%B5%EA%B0%9C%20%EC%9E%91%EC%84%B1%EA%B8%B0%5D%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">기관 도입 문의</a>
   </div>
 </main>
@@ -251,7 +281,7 @@
 (function () {
   var url = (window.FOI_SERVER_URL || "").replace(/\/+$/, "");
   if (!url) return;
-  var map = { "go-login": "/login", "go-signup": "/signup", "go-find": "/find" };
+  var map = { "go-login": "/login", "go-signup": "/signup", "go-find": "/find", "nav-login": "/login", "nav-signup": "/signup" };
   Object.keys(map).forEach(function (id) {
     var a = document.getElementById(id);
     a.href = url + map[id];
